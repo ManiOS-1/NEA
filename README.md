@@ -1,36 +1,21 @@
-# Welcome to Remix + Vite!
+SQLite API: https://github.com/WiseLibs/better-sqlite3
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/guides/vite) for details on supported features.
+```javascript
+/* GET DATA */
+// Prepares
+db.prepare('SELECT name, email FROM Clients');
+// Prepares & Runs
+db.prepare('SELECT name, email FROM Clients').all();
 
-## Development
+// Prepares (with ?)
+let query = db.prepare('SELECT * FROM users WHERE email = ?');
+// Runs with the ? filled in
+query.get('example@example.com')
 
-Run the Vite dev server:
+/* INSERT DATA */
+// Prepares (with ?)
+const insert = db.prepare('INSERT INTO users (name, email) VALUES (?, ?)');
+insert.run('John Doe', 'john@example.com');
 
-```shellscript
-npm run dev
 ```
 
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
-```
-
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
