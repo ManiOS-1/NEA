@@ -1,15 +1,17 @@
 import '../styles/progress.css';
 import ProgressRow from '../components/ProgressRow';
-import { Form, useActionData, useParams } from '@remix-run/react'
+import { Form, useActionData, useParams, useLoaderData } from '@remix-run/react'
 import { getDb } from '../database.server.js';
 import { redirect, json } from "@remix-run/node";
 
-// export const loader = async () => {
-//   const db = await getDb()
-//   const trainers = await db.all('SELECT * FROM Trainers')
-//   await db.close()
-//   return json({ trainers })
-// }
+export const loader = async ({ params }) => {
+  const { clientId } = params; 
+
+  const db = await getDb()
+  const exercises = await db.all('SELECT * FROM Exercises WHERE client = ?', clientId)
+  await db.close()
+  return json({ exercises })
+}
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
@@ -46,6 +48,7 @@ export const action = async ({ request }) => {
 
 export default function Progress() {
     const { clientId } = useParams(); // Access the clientId from the params object
+    const { exercises } = useLoaderData();
 
     return (
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
@@ -73,7 +76,9 @@ export default function Progress() {
             <th>Notes</th>
           </tr>
           <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-          <ProgressRow exercise="push ups" weight="n/a" reps="20" notes="good progress" />
+          { exercises.map(exercise => 
+            <ProgressRow exercise={exercise.exercise} weight={exercise.weight} reps={exercise.repsTime} notes={exercise.notes} />
+          )}
         </table>
       </div>
     );
