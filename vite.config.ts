@@ -7,4 +7,10 @@ installGlobals();
 
 export default defineConfig({
   plugins: [remix(), tsconfigPaths()],
+  server: {
+    hmr: true, // Ensures Hot Module Replacement is enabled
+  },
+  build: {
+    outDir: 'build', // Adjust this if you need a different directory
+  },
 });
