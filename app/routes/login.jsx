@@ -7,8 +7,19 @@ import { useNavigate } from 'react-router-dom';
 import { redirect, json } from "@remix-run/node";
 import { Link } from '@remix-run/react';
 import '../styles/App.css';
-
 import { getDb } from '../database.server.js';
+
+
+// function App() {
+//     return (
+//       <Router>
+//         <Routes>
+//           {/* Default route to start with the Login page */}
+//           <Route path="/" element={<Navigate to="/login" />} />
+//           </Routes>
+//     </Router>
+//   );
+// }
 
 export const action = async ({ request }) => {
     const formData = await request.formData();

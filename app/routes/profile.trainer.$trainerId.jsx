@@ -4,35 +4,35 @@ import { Form, useActionData, useParams, useLoaderData } from '@remix-run/react'
 import { getDb } from '../database.server.js';
 import { redirect, json } from "@remix-run/node";
 import { Link } from '@remix-run/react';
-import Navbar from '../components/Navbar';
-import React, { useEffect } from "react";
 
 export const loader = async ({ params }) => {
-  const { clientId } = params; 
+  const { trainerId } = params; 
 
   const db = await getDb()
-  const client = await db.get('SELECT * FROM Clients WHERE email = ?', clientId)
+  const trainer = await db.get('SELECT * FROM Trainers WHERE email = ?', trainerId)
   await db.close()
-  return json({ client })
+  return json({ trainer })
 }
 
-export default function ClientProfile() {
-    const { clientId } = useParams(); 
-    const { client } = useLoaderData();
 
+
+export default function ClientProfile() {
+    const { trainerId } = useParams(); 
+    const { trainer } = useLoaderData();
+    
     return (
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-        { "DOES THIS RENDER!"}  
-        <Navbar/>
+        
         <hr/>
         { 
           <div>
             {/* { client.profilePicture } <br/>  */}
-            { client.firstName } <br/> 
-            { client.lastName } <br/> 
-            { client.email } <br/> 
-            { client.goals } <br/> 
-            <Link to={"/progress/" + client.email}>Your Progress</Link> 
+            { trainer.firstName } <br/> 
+            { trainer.lastName } <br/> 
+            { trainer.email } <br/> 
+            { trainer.specialties } <br/> 
+            { trainer.bio } <br/> 
+            <Link to={"/clients/" + trainer.email}>Your Clients</Link> 
             <hr/>
           </div>
         }
