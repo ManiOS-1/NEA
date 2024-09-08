@@ -1,0 +1,42 @@
+/* Overall container for the navbar */
+.navbar {
+    display: flex;                   /* Use flexbox for layout */
+    flex-wrap: wrap;                 /* Allow items to wrap to the next line */
+    justify-content: space-between; /* Space items evenly with space in between */
+    align-items: center;             /* Center items vertically */
+    background-color: #333;          /* Dark background color */
+    padding: 10px 20px;              /* Padding around the navbar */
+    color: white;                    /* Text color */
+}
+
+/* Styling for each link */
+.navbar a {
+    color: white;                    /* Link color */
+    text-decoration: none;           /* Remove underline from links */
+    padding: 10px 15px;              /* Padding around links */
+    font-size: 16px;                 /* Font size */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Add hover effect to links */
+.navbar a:hover {
+    background-color: #555;          /* Change background color on hover */
+    border-radius: 5px;              /* Rounded corners on hover */
+}
+
+/* Style for the button */
+.navbar button {
+    background-color: #007bff;       /* Blue background color */
+    border: none;                    /* Remove border */
+    color: white;                    /* Text color */
+    padding: 10px 20px;              /* Padding around button */
+    font-size: 16px;                 /* Font size */
+    cursor: pointer;                 /* Pointer cursor on hover */
+    border-radius: 5px;              /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Add hover effect to button */
+.navbar button:hover {
+    background-color: #0056b3;       /* Darker blue on hover */
+}

@@ -75,7 +75,7 @@ export default function Progress() {
             <th>reps/times</th>
             <th>Notes</th>
           </tr>
-          <tr><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+          
           { exercises.map(exercise => 
             <ProgressRow exercise={exercise.exercise} weight={exercise.weight} reps={exercise.repsTime} notes={exercise.notes} />
           )}

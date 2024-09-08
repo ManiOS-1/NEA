@@ -1,0 +1,62 @@
+/* Timetable.css */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  td {
+    background-color: #fff;
+    color: #333;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+  }
+  
+  thead th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  tbody td {
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    table {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  }
+  
