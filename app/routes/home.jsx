@@ -1,6 +1,6 @@
 import { Link } from "@remix-run/react";
 import * as React from 'react';
-import Navbar from "../components/Navbar"; // Adjust the path if necessary
+import Navbar from "../components/Navbar";
 
 const home = () => {
     console.log("Home component rendered");

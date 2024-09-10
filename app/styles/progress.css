@@ -1,4 +1,4 @@
-table {
+/* table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -26,4 +26,115 @@ table {
     background: none;
     color: white;
     text-decoration: underline;
+  } */
+   /* progress.css */
+
+/* General styles */
+
+
+/* progress.css */
+
+/* General styles */
+
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto; /* Center content */
+  padding: 2em 1em; /* Add padding around the page */
+}
+
+h1, h2 {
+  text-align: center; /* Center titles */
+}
+
+h1 {
+  color: #007bff;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 1em;
+}
+
+/* Form styles */
+form {
+  margin-bottom: 2em;
+  text-align: center; /* Center form elements */
+}
+
+input[type="text"] {
+  display: block;
+  width: 80%; /* Reduced width */
+  max-width: 400px;
+  padding: 0.4em;
+  margin: 0.5em auto; /* Center inputs */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 0.6em 1.2em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2em auto; /* Center table and add top margin */
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a slight shadow for a modern look */
+}
+
+th, td {
+  padding: 1em; /* Increased padding */
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 95%; /* Adjust width for smaller screens */
   }
+
+  input[type="text"], button[type="submit"] {
+    width: 90%; /* Ensure form elements fit well on smaller screens */
+  }
+
+  table {
+    width: 100%;
+  }
+}

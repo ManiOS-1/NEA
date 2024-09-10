@@ -4,6 +4,7 @@ import { Form, useActionData, useParams, useLoaderData } from '@remix-run/react'
 import { getDb } from '../database.server.js';
 import { redirect, json } from "@remix-run/node";
 import { Link } from '@remix-run/react';
+import Navbar from '../components/Navbar';
 
 export const loader = async ({ params }) => {
   const { trainerId } = params; 
@@ -47,7 +48,7 @@ export default function ClientList() {
     
     return (
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-        
+        <Navbar/>
         <>Add A New Client (enter the client's email)</> 
         <Form method='post'>
           <input type="hidden" id="trainerId" name="trainerId" value={trainerId} />

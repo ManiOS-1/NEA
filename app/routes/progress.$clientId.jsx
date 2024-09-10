@@ -3,6 +3,7 @@ import ProgressRow from '../components/ProgressRow';
 import { Form, useActionData, useParams, useLoaderData } from '@remix-run/react'
 import { getDb } from '../database.server.js';
 import { redirect, json } from "@remix-run/node";
+import Navbar from "../components/Navbar";
 
 export const loader = async ({ params }) => {
   const { clientId } = params; 
@@ -52,6 +53,7 @@ export default function Progress() {
 
     return (
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+        <Navbar/>
         <h2>Your Progression and Statistics</h2> 
 
         <br/>
@@ -60,9 +62,13 @@ export default function Progress() {
           <h1>Enter your progress</h1>
           <Form method='post'>
               <input type="hidden" id="clientId" name="clientId" value={clientId} />
+              <h4>Exercises</h4>
               <input type="text" name="exercise" required />
+              <h4>Weight</h4>
               <input type="text" name="weight" required />
+              <h4>Reps/Time</h4>
               <input type="text" name="repsTime" required />
+              <h4>Notes</h4>
               <input type="text" name="notes" required />
               <button type="submit">submit</button>
           </Form>

@@ -118,7 +118,7 @@ export const Navbar = (props) => {
                 <>
                     {`Trainer Logged in with ${userDetails.email}`}
                     <Link to="/home">Home</Link> 
-                    <Link to="/timetable">Timetable</Link> 
+                    <a href={`/timetable/trainer/${userDetails.email}`}>Timetable</a>
                     <a href={`/profile/trainer/${userDetails.email}`}>Profile</a> 
                     <Link to={`/clients/${userDetails.email}`}>Clients</Link> 
                 </>) : <></>
@@ -129,7 +129,7 @@ export const Navbar = (props) => {
                 <>
                     {`Client Logged in with ${userDetails.email}`}
                     <Link to="/home">Home</Link> 
-                    <Link to="/timetable">Timetable</Link> 
+                    <a href={`/timetable/client/${userDetails.email}`}>Timetable</a> 
                     <a href={`/profile/client/${userDetails.email}`}>Profile</a> 
                     <Link to={`/progress/${userDetails.email}`}>Progress</Link>
                 </>) : <></>

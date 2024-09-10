@@ -1,0 +1,84 @@
+/* General styling for the client's profile page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #343a40;
+  }
+  
+  .profile-header p {
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  .bio-section {
+    margin: 20px 0;
+  }
+  
+  .bio-section h2 {
+    font-size: 1.8rem;
+    color: #495057;
+    margin-bottom: 10px;
+  }
+  
+  .bio-section p {
+    font-size: 1.1rem;
+    color: #212529;
+  }
+  
+  .goals-section {
+    margin-top: 30px;
+  }
+  
+  .goals-section h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .goals-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .goals-section ul li {
+    font-size: 1.1rem;
+    color: #212529;
+    margin-bottom: 8px;
+  }
+  
+  .link-section {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .link-section a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  
+  .link-section a:hover {
+    text-decoration: underline;
+  }
+  
