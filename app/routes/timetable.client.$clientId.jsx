@@ -73,9 +73,9 @@ const Timetable = () => {
   };
 
   return (
-    <div>
+    <>
       <Navbar/>
-      Timetable for the client 
+
 
       {/* clientId, trainerId, date, time, focus */}
       {/* Client Cannot Add To The Timetable */}
@@ -91,36 +91,37 @@ const Timetable = () => {
           <input type="text" name="focus" required />
           <button type="submit">submit</button>
       </Form> */}
-
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Time</th>
-            {days.map(day => (
-              <th key={day}>{day.charAt(0).toUpperCase() + day.slice(1)}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {hours.map(hour => (
-            <tr key={hour}>
-              <td>{`${hour}:00`}</td>
-              {days.map(day => {
-                const session = findSession(day, hour);
-                return (
-                  <td key={`${day}-${hour}`}>
-                    {session 
-                      ? <>{`${session.focus} with`} <a href={`/profile/trainer/${session.trainer}`}>{session.trainer}</a></>
-                      : '—'
-                    }
-                  </td>
-                );
-              })}
+      <div>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Time</th>
+              {days.map(day => (
+                <th key={day}>{day.charAt(0).toUpperCase() + day.slice(1)}</th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {hours.map(hour => (
+              <tr key={hour}>
+                <td>{`${hour}:00`}</td>
+                {days.map(day => {
+                  const session = findSession(day, hour);
+                  return (
+                    <td key={`${day}-${hour}`}>
+                      {session 
+                        ? <>{`${session.focus} with`} <a href={`/profile/trainer/${session.trainer}`}>{session.trainer}</a></>
+                        : '—'
+                      }
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 

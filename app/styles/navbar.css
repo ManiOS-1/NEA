@@ -5,7 +5,7 @@
     justify-content: space-between; /* Space items evenly with space in between */
     align-items: center;             /* Center items vertically */
     background-color: #333;          /* Dark background color */
-    padding: 10px 20px;              /* Padding around the navbar */
+    padding: 10px 20px;              /*Padding around the navbar */
     color: white;                    /* Text color */
 }
 
@@ -26,7 +26,7 @@
 
 /* Style for the button */
 .navbar button {
-    background-color: #007bff;       /* Blue background color */
+    background-color: #28a745;       /* Blue background color */
     border: none;                    /* Remove border */
     color: white;                    /* Text color */
     padding: 10px 20px;              /* Padding around button */

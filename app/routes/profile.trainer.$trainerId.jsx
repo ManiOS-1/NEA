@@ -118,13 +118,15 @@ export default function TrainerProfile() {
     }, []);
     
     return (
+      <>
+      <Navbar/>
       <div className="container">
-        <Navbar/>
         <div className="profile-header">
           <h1>Trainer Profile</h1>
         </div>
 
-        { userDetails.trainer &&
+        <div>
+        { userDetails.email === trainerId  &&
         <Form method='post'>
           <input type="hidden" id="trainerId" name="trainerId" value={trainerId} />
           <h4>Bio</h4>
@@ -133,6 +135,7 @@ export default function TrainerProfile() {
           <input type="text" name="specialties" required />
           <button type="submit">submit</button>
         </Form>}
+        </div>
 
         <hr/>
         { 
@@ -159,5 +162,6 @@ export default function TrainerProfile() {
           </div>
         }
       </div>
+      </>
     );
 }

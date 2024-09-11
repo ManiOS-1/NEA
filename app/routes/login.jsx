@@ -8,7 +8,7 @@ import { redirect, json } from "@remix-run/node";
 import { Link } from '@remix-run/react';
 import '../styles/App.css';
 import { getDb } from '../database.server.js';
-
+import crypto from 'crypto';
 
 // function App() {
 //     return (
@@ -48,7 +48,10 @@ export const action = async ({ request }) => {
             return json({ error: "Invalid email or password" }, { status: 400 });
         }
         
-        if (user.password !== password) {
+        const hashedPassword = crypto.createHash('sha256').update(password).digest('hex');
+        // hashing password
+
+        if (user.password !== hashedPassword) {
             return json({ error: "Invalid email or password" }, { status: 400 });
         }
     } catch (error) {

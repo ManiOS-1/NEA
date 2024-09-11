@@ -119,8 +119,10 @@ export default function ClientProfile() {
     }, []);
 
     return (
+      <>
+      <Navbar/>
+
       <div className="container">
-        <Navbar/>
         <div className="profile-header">
           <h1>Client Profile</h1>
         </div>
@@ -160,5 +162,6 @@ export default function ClientProfile() {
           </div>
         }
       </div>
+      </>
     );
 }

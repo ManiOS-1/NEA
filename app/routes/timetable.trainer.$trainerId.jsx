@@ -75,7 +75,7 @@ const Timetable = () => {
   return (
     <div>
       <Navbar/>
-      Timetable for the client 
+
 
       {/* clientId, trainerId, date, time, focus */}
       <Form method='post'>

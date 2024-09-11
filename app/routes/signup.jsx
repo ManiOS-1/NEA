@@ -6,6 +6,7 @@ import { Form, useActionData } from '@remix-run/react'
 import { redirect, json } from "@remix-run/node";
 import { Link } from '@remix-run/react';
 import '../styles/App.css';
+import crypto from 'crypto';
 
 import { getDb } from '../database.server.js';
 
@@ -28,6 +29,9 @@ export const action = async ({ request }) => {
     } else if (!firstName || !lastName || !age || !mobileNumber || !email || !password || !confirmPassword || !accountType) {
         return json({ error: "All fields are required" }, { status: 400 });
     } else {
+        const hashedPassword = crypto.createHash('sha256').update(password).digest('hex');
+        // hashing function for the password
+
         if (accountType === "Trainer") {
             try {
                 await db.run('INSERT INTO trainers (firstName, lastName, age, mobileNumber, email, password) VALUES (?, ?, ?, ?, ?, ?)',
@@ -36,7 +40,8 @@ export const action = async ({ request }) => {
                     age,
                     mobileNumber,
                     email,
-                    password
+                    hashedPassword
+                    // storing the hashed password instead of plain text
                 )
             } catch (error) {
                 return json({ error: "This email has already been taken!" }, { status: 400 });
@@ -49,7 +54,8 @@ export const action = async ({ request }) => {
                     age,
                     mobileNumber,
                     email,
-                    password
+                    hashedPassword
+                    // storing the hashed password instead of plain text
                 )
             } catch (error) {
                 return json({ error: "This email has already been taken!" }, { status: 400 });
