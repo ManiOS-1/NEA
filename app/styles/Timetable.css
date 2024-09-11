@@ -1,62 +1,89 @@
-/* Timetable.css */
+/* General Styles for the Timetable */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
 
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin: 20px 0;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style for the Table Headings */
+th {
+  font-size: 16px;
+}
+
+/* Style for the Table Cells */
+td {
+  font-size: 14px;
+}
+
+/* Style for the Time and Day Columns */
+td:first-child {
+  font-weight: bold;
+  background-color: #e0e0e0;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
   th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
+    font-size: 12px;
+    padding: 8px;
   }
-  
-  th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  td {
-    background-color: #fff;
-    color: #333;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-  }
-  
-  thead th {
-    background-color: #333;
-    color: #fff;
-  }
-  
-  tbody td {
-    font-size: 14px;
-  }
-  
-  @media (max-width: 768px) {
-    table {
-      font-size: 12px;
-    }
-  
-    th, td {
-      padding: 8px;
-    }
-  }
-  
+}
+
+/* Form Styles */
+form {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+form h4 {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
