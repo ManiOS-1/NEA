@@ -44,6 +44,7 @@ export const action = async ({ request }) => {
                     // storing the hashed password instead of plain text
                 )
             } catch (error) {
+                console.log(error);
                 return json({ error: "This email has already been taken!" }, { status: 400 });
             }
         } else if (accountType === "Client") {
@@ -58,6 +59,7 @@ export const action = async ({ request }) => {
                     // storing the hashed password instead of plain text
                 )
             } catch (error) {
+                console.log(error);
                 return json({ error: "This email has already been taken!" }, { status: 400 });
             }
         } 
@@ -66,7 +68,7 @@ export const action = async ({ request }) => {
     await db.close()
   
     // Redirect to a different page after successful submission
-    return redirect("/home");
+    return redirect("/login");
 };
 
 export default function Index() {

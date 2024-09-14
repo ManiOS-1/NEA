@@ -1,10 +1,16 @@
-/* Styling for the Home Page */
+/*
+
+Styling for the Home Page
 
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
+    background-image: url(../images/GymBackgroundPic4.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -29,7 +35,81 @@ p {
     line-height: 1.6;
 }
 
-/* Navbar spacing to avoid overlap */
+/* Navbar spacing to avoid overlap 
 .navbar {
     margin-bottom: 20px;
+} 
+*/
+
+/* Styling for the Home Page */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    background-image: url(../images/GymBackgroundPic4.jpg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.content-section .image-container {
+    flex: 1;
+}
+
+.content-section .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.content-section .text-container {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.image-left .image-container {
+    order: 1; /* Image on the left */
+}
+
+.image-right .image-container {
+    order: 2; /* Image on the right */
+}
+
+.image-left .text-container {
+    order: 2;
+}
+
+.image-right .text-container {
+    order: 1;
+}
+

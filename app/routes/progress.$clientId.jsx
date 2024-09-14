@@ -4,6 +4,7 @@ import { Form, useActionData, useParams, useLoaderData } from '@remix-run/react'
 import { getDb } from '../database.server.js';
 import { redirect, json } from "@remix-run/node";
 import Navbar from "../components/Navbar";
+import React, { useState, useEffect } from "react";
 
 export const loader = async ({ params }) => {
   const { clientId } = params; 
@@ -50,6 +51,18 @@ export const action = async ({ request }) => {
 export default function Progress() {
     const { clientId } = useParams(); // Access the clientId from the params object
     const { exercises } = useLoaderData();
+    const [userDetails, setUserDetails] = useState({});
+
+    useEffect(() => {
+      // Formdata: email, password, accountType
+      const localFormData = localStorage.getItem('formData');
+      console.log(localFormData)
+
+      if (localFormData) {
+          const parsedData = JSON.parse(localFormData);
+          setUserDetails(parsedData)
+      }
+  }, []);
 
     return (
       <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
@@ -58,6 +71,7 @@ export default function Progress() {
 
         <br/>
         
+        { userDetails.accountType === "Trainer" &&
         <div>
           <h1>Enter your progress</h1>
           <Form method='post'>
@@ -72,7 +86,7 @@ export default function Progress() {
               <input type="text" name="notes" required />
               <button type="submit">submit</button>
           </Form>
-        </div>
+        </div> }
 
         <table>
           <tr>
